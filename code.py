@@ -136,10 +136,10 @@ import numpy as np
 from os import listdir
 from os.path import isfile, join
 
-monkey_breeds_dict = {"[0]": " Hj ", 
+humanface_dict = {"[0]": " Hj ", 
                       "[1]": "mom "}
 
-monkey_breeds_dict_n = {"Hj": " Hj ", 
+humanface_dict_n = {"Hj": " Hj ", 
                       "mom": "mom "}
 
 def draw_test(name, pred, im):
@@ -154,7 +154,7 @@ def getRandomImage(path):
     folders = list(filter(lambda x: os.path.isdir(os.path.join(path, x)), os.listdir(path)))
     random_directory = np.random.randint(0,len(folders))
     path_class = folders[random_directory]
-    print("Class - " + monkey_breeds_dict_n[str(path_class)])
+    print("Class - " + humanface_dict_n[str(path_class)])
     file_path = path + path_class
     file_names = [f for f in listdir(file_path) if isfile(join(file_path, f))]
     random_file_index = np.random.randint(0,len(file_names))
